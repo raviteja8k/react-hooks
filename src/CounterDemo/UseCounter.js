@@ -2,10 +2,9 @@ import {useState} from 'react';
 
 
 const useCounter = (start, finish, step) => {
+       
     //Definition of our state
-    
-    const [count, setCount] = useState(start);
-    
+    const [count, setCount] = useState(start);     
     //Implementation of our handleCount method
     
     const handleCount = () => {
