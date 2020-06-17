@@ -4,11 +4,14 @@ import './App.css';
 
 function App() {
       const [fullName, setFullName] = useState({name: 'name', familyName: 'family'});
-      const [title,setTitle] = useState('useEffect() in Hooks');
+      const [title] = useState('useEffect() in Hooks');
     
     useEffect(() => {
-      
-    });
+        console.log('Running useEffect');
+        setFullName({name: 'Updated name'});
+    }, []);
+    // Running useEffect without [] keeps running the loop like componentDidUpdate 
+    // To tell useEffect to act like componentDidMount just pass an empty array []
     
     return(
         <div className="App">
