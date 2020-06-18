@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import CountryList from './GetList';
+import UserList from './GetList';
 
 function App() {  
    
     return(
         <div className="App">
-          <CountryList />
+          <UserList />
          </div>
       );
  
