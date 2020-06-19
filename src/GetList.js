@@ -7,8 +7,8 @@ const UserList = () => {
     const [error, setError] = useState('');
 
     async function fetchData(){
-        const res = await fetch('https://jsonplaceholder.typicode.com/users');
-        res.json().then(res => setUsers(res)).catch(err => setError(err));
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        response.json().then(res => setUsers(res)).catch(err => setError(err));
         setLoad(true);
     
     }
