@@ -14,8 +14,10 @@ const UserList = () => {
     }
     
     useEffect(() => {
+        console.log('useEffect still running');
         fetchData();
-    });
+    },[]);
+    // without the square bracket here the loop keeps running ad infinitum
     
     if (load) {
         return (
