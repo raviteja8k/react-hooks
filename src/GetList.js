@@ -30,7 +30,7 @@ const UserList = () => {
     } else {
         return (
             <div>
-                Loading...
+               <h1>Loading...</h1>
             </div>
         );
     }
