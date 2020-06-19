@@ -1,23 +1,21 @@
 import React,{useEffect,useState} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
     const [load, setLoad] = useState(false);
     const [error, setError] = useState('');
 
-    useEffect(() => {        
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(res => {
-                setUsers(res.data);
-                setLoad(true);
-            })
-            .catch(err => {
-                setError(err.message);
-                setLoad(true)
-            })
-    }, []);
+    async function fetchData(){
+        const res = await fetch('https://jsonplaceholder.typicode.com/users');
+        res.json().then(res => setUsers(res)).catch(err => setError(err));
+        setLoad(true);
     
+    }
+    
+    useEffect(() => {
+        fetchData();
+    });
     
     if (load) {
         return (
