@@ -1,9 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Understanding React Hooks
-React Hooks (not lifecycle hooks) are something that let you write Functional Components and still hook into class-based features and use them.
+### By default, rendering in a single component causes all of its sub-components to render also. Even if their props haven’t changed. This is precisely the problem that PureComponent was designed to optimize. 
 
-### UseState() is more like this.state to initiate state for function based components
+PureComponent is exactly the same as Component except that it handles the shouldComponentUpdate method for you. When props or state changes, PureComponent will do a shallow comparison on both props and state. 
 
-### UseEffect() allow us to handle our logic in lifecycle methods.
-It’s equivalent of componentDidMount and componentDidUpdate from lifestyle hooks.
+Use “Highlight Updates” turned on in the React Dev Tools. This allows us to see when the component is being updated (aka re-rendered).
